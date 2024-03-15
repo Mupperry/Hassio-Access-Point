@@ -216,6 +216,9 @@ if $(bashio::config.true "dhcp"); then
     dnsmasq -C /dnsmasq.conf
 fi
 
+logger "## ifconfig up" 1
+ifconfig $INTERFACE up
+
 logger "## Starting hostapd daemon" 1
 # If debug level is greater than 1, start hostapd in debug mode
 if [ $DEBUG -gt 1 ]; then
