@@ -216,7 +216,7 @@ if $(bashio::config.true "dhcp"); then
     dnsmasq -C /dnsmasq.conf
 fi
 
-logger "## Attempting workaround"
+logger "## Attempting workaround" 1
 nmcli radio wifi off
 rfkill unblock all
 
