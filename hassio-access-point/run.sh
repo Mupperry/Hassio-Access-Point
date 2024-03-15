@@ -215,9 +215,7 @@ if $(bashio::config.true "dhcp"); then
     logger "## Starting dnsmasq daemon" 1
     dnsmasq -C /dnsmasq.conf
 fi
-logger "## Attempting workaround" 1
-nmcli nm $INTERFACE off
-rfkill unblock $INTERFACE
+
 logger "## Starting hostapd daemon" 1
 # If debug level is greater than 1, start hostapd in debug mode
 if [ $DEBUG -gt 1 ]; then
